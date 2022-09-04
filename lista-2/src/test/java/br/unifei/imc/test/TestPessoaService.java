@@ -53,7 +53,7 @@ public class TestPessoaService {
 
     @AfterClass
     public static void cleanup() throws IOException {
-//        Files.deleteIfExists(Path.of("pessoas.csv"));
-//        Files.deleteIfExists(Path.of("pessoas.json"));
+        Files.deleteIfExists(Path.of("pessoas.csv"));
+        Files.deleteIfExists(Path.of("pessoas.json"));
     }
 }
