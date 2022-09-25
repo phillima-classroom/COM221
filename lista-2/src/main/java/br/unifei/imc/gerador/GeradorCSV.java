@@ -3,9 +3,11 @@ package br.unifei.imc.gerador;
 import br.unifei.imc.model.Pessoa;
 import com.opencsv.CSVWriter;
 
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GeradorCSV implements GeradorArquivo{
@@ -27,10 +29,11 @@ public class GeradorCSV implements GeradorArquivo{
                 writer.writeNext(dado);
             });
 
-
-        }catch (IOException e){
-            e.printStackTrace();
+            arquivo.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
 
     }
 }

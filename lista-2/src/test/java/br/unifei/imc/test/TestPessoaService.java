@@ -38,12 +38,17 @@ public class TestPessoaService {
 
     @Test
     public void testeValidaJSON(){
-        Assert.fail();
+        try {
+            String arquivo = Files.readString(Path.of("pessoas.json"));
+            Assert.assertEquals(ConstFileInfo.JSON,arquivo);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Test
     public void testCriarJSON(){
-        Assert.fail();
+        Assert.assertTrue(Files.exists(Path.of("pessoas.json")));
     }
 
     @Test(expected = OpcaoErradaException.class)
